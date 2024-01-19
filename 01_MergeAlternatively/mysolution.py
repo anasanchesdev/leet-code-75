@@ -1,19 +1,20 @@
-class Solution:
-    def mergeAlternately(self, a, b):
-        word1 = a
-        word2 = b
-        merged = ""
-
-        word1_len = len(word1)
-        word2_len = len(word2)
-        greatest_len = max([word1_len, word2_len])
-        counter = 0
-
-        while counter != greatest_len:
-            if counter < word1_len:
-                merged += word1[counter]
-            if counter < word2_len:
-                merged += word2[counter]
-            counter += 1
-
-        return merged
+#  RUNTIME: 7ms (beats 97.63%)  MEMORY: 11.76MB (beats 100.00%)
+class Solution(object):
+    def mergeAlternately(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: str
+        """
+        m = ""
+        l1 = len(word1)
+        l2 = len(word2)
+        gl = max([l1, l2])
+        c = 0
+        while c != gl:
+            if c < l1:
+                m += word1[c]
+            if c < l2:
+                m += word2[c]
+            c += 1
+        return m
